@@ -21,7 +21,7 @@ class CategorySerializer(serializers.Serializer):
 class ItemSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=20)
     price = serializers.IntegerField()
-    category = serializers.IntegerField()
+    category_id = serializers.IntegerField()
 
     def create(self, validated_data):
         return Item.objects.create(**validated_data)
